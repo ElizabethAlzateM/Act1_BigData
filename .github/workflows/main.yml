@@ -21,4 +21,4 @@ jobs:
 
     - name: Ejecutar script
       run: |
-        python ./Act1_BigData/Script_Brewery.ipynb
+        python Script_Brewery.ipynb
