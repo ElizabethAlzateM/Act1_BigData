@@ -1,0 +1,24 @@
+name: Automatización de Datos
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.13.2'
+    
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pandas sqlite3
+
+    - name: Ejecutar script
+      run: |
+        python Act1_BigData/Script_Brewery.ipynb
